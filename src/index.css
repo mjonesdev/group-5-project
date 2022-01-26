@@ -13,8 +13,13 @@ body {
 }
 
 body {
-  background-image: url("");
-  background-color: #d4d4d4;
+  background-image: url("https://i.ibb.co/5j8VhN0/BG-GIF-2.gif");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #e5e5e5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,7 +81,7 @@ button {
   width: 100%;
   font-size: 16px;
   color: #000000;
-  background-color: #eec231;
+  background-color: #ffc700;
   border-radius: 10px;
   display: flex;
   padding: 5px;
@@ -90,105 +95,3 @@ button {
 button:hover {
   background-color: #c796e7;
 }
-
-/* Background */
-
-.slider-thumb::before {
-	position: absolute;
-	content: "";
-	left: -20%;
-	top: -20%;
-	width: 300px;
-	height: 300px;
-	background: #e0aa35;
-	border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
-	will-change: border-radius, transform, opacity;
-	animation: sliderShape 5s linear infinite;
-	display: block;
-	z-index: -1;
-	-webkit-animation: sliderShape 5s linear infinite;
-}
-@keyframes sliderShape{
-  0%,100%{
-  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-    transform: translate3d(0,0,0) rotateZ(0.01deg);
-  }
-  34%{
-      border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
-    transform:  translate3d(0,5px,0) rotateZ(0.01deg);
-  }
-  50%{
-    transform: translate3d(0,0,0) rotateZ(0.01deg);
-  }
-  67%{
-    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
-    transform: translate3d(0,-3px,0) rotateZ(0.01deg);
-  }
-}
-
-.slider-thumb1::before {
-	position: absolute;
-	content: "";
-	right: -20%;
-	top: 0%;
-	width: 300px;
-	height: 400px;
-	background: #e0aa35;
-	border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
-	will-change: border-radius, transform, opacity;
-	animation: sliderShape 5s linear infinite;
-	display: block;
-	z-index: -1;
-	-webkit-animation: sliderShape 5s linear infinite;
-}
-@keyframes sliderShape{
-  0%,100%{
-  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-    transform: translate3d(0,0,0) rotateZ(0.01deg);
-  }
-  34%{
-      border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
-    transform:  translate3d(0,5px,0) rotateZ(0.01deg);
-  }
-  50%{
-    transform: translate3d(0,0,0) rotateZ(0.01deg);
-  }
-  67%{
-    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
-    transform: translate3d(0,-3px,0) rotateZ(0.01deg);
-  }
-}
-
-.slider-thumb2::before {
-	position: absolute;
-	content: "";
-	right: 30%;
-	bottom: -50%;
-	width: 400px;
-	height: 400px;
-	background: #e0aa35;
-	border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
-	will-change: border-radius, transform, opacity;
-	animation: sliderShape 5s linear infinite;
-	display: block;
-	z-index: -1;
-	-webkit-animation: sliderShape 5s linear infinite;
-}
-@keyframes sliderShape{
-  0%,100%{
-  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-    transform: translate3d(0,0,0) rotateZ(0.01deg);
-  }
-  34%{
-      border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
-    transform:  translate3d(0,5px,0) rotateZ(0.01deg);
-  }
-  50%{
-    transform: translate3d(0,0,0) rotateZ(0.01deg);
-  }
-  67%{
-    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
-    transform: translate3d(0,-3px,0) rotateZ(0.01deg);
-  }
-}
-
