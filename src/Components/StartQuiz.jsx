@@ -7,7 +7,6 @@ function StartQuiz(props) {
   const [enteredContent, setEnteredContent] = useState("linux");
   const [enteredDifficulty, setEnteredDifficulty] = useState("easy");
 
-<<<<<<< HEAD
   const numberChangeHandler = (event) => {
     setEnteredNumber(event.target.value);
   };
@@ -80,14 +79,7 @@ function StartQuiz(props) {
       </div>
     </form>
   );
-=======
-	return (
-	<div className="Start">
-	<p>Be smarter, quicker and brainier!<br/>Put your quiz skills to the test and broaden your knowledge.</p>
-    <button onClick={() => {setGameState("card")}}>Start Quiz</button>
-	</div>
-	);
->>>>>>> background
+
 }
 
 export default StartQuiz;
