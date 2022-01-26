@@ -40,11 +40,13 @@ function StartQuiz(props) {
         <br />
         Put your quiz skills to the test and broaden your knowledge.
       </p>
-      <div>
+      <div className="toggle">
         <div>
-          <label>Number of Questions:</label>
+          <label className="label">Number of Questions:</label>
+		  <br/>
           <ToggleButtonGroup
-            color="primary"
+            color="secondary"
+			value={enteredNumber}
             exclusive
             onChange={numberChangeHandler}
           >
@@ -53,35 +55,40 @@ function StartQuiz(props) {
             <ToggleButton value="15">15</ToggleButton>
           </ToggleButtonGroup>
         </div>
+		<br/>
         <div>
-          <label>Subject Area</label>
-          <select
-            value={enteredContent}
-            name="content"
-            id="content"
+          <label className="label">Subject Area:</label>
+		  <br/>
+		  <ToggleButtonGroup
+            color="secondary"
+			value={enteredContent}
+            exclusive
             onChange={contentChangeHandler}
           >
-            <option value="linux">Linux</option>
-            <option value="sql">SQL</option>
-            <option value="code">Code</option>
-          </select>
+            <ToggleButton value="linux">Linux</ToggleButton>
+            <ToggleButton value="SQL">SQL</ToggleButton>
+            <ToggleButton value="code">Code</ToggleButton>
+          </ToggleButtonGroup>
         </div>
+		<br/>
         <div>
-          <label>Difficulty</label>
-          <select
-            value={enteredDifficulty}
-            name="content"
-            id="content"
+          <label className="label">Difficulty:</label>
+		  <br/>
+		  <ToggleButtonGroup
+            color="secondary"
+			value={enteredDifficulty}
+            exclusive
             onChange={difficultyChangeHandler}
           >
-            <option value="Easy">Easy</option>
-            <option value="Medium">Medium</option>
-            <option value="Hard">Hard</option>
-          </select>
+            <ToggleButton value="Easy">Easy</ToggleButton>
+            <ToggleButton value="Medium">Medium</ToggleButton>
+            <ToggleButton value="Hard">Hard</ToggleButton>
+          </ToggleButtonGroup>
         </div>
+		<br/>
       </div>
-      <div>
-        <button type="submit">Start Quiz</button>
+      <div className="btnDiv">
+        <button className="btn" type="submit">Start Quiz</button>
       </div>
     </form>
   );

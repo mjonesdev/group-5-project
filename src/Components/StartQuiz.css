@@ -6,3 +6,39 @@
 .message {
     text-align: center;
 }
+
+.toggle {
+text-align: center;
+}
+
+.label {
+    font-weight: bold ;
+    display: inline-block;
+    padding-bottom: 3px;
+}
+
+.btnDiv {
+display: flex;
+justify-content: center;
+}
+
+.btn {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 40%;
+font-size: 16px;
+color: #000000;
+background-color: #ffc700;
+border-radius: 10px;
+padding: 5px;
+margin: 1%;
+justify-content: center;
+align-items: center;
+border: 2px solid #000000;
+cursor: pointer;
+}
+
+.btn:hover {
+background-color: #c796e7;
+}
