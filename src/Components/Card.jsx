@@ -2,21 +2,20 @@ import React, { useState, useEffect } from "react";
 import baseURL from "./Request";
 import axios from "axios";
 
-export default function Card() {
+export default function Card(props) {
 	const [isLoading, setIsLoading] = useState(true);
 	const [questions, setQuestions] = useState([]);
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 
-	let category = "&linux";
-	let difficulty = "&easy";
-	let limit = "&limit=5";
-	let URL = `${baseURL}${category}${difficulty}${limit}`;
-
+	
+	let URL = `${baseURL}&category=${props.quizOptions.content}&difficulty=${props.quizOptions.difficulty}&limit=${props.quizOptions.number}`;
 	useEffect(() => {
 	async function fetchData() {
+		console.log(props)
 		const request = await axios.get(`${URL}`);
+		console.log(URL)
 		setQuestions(request.data);
 		setIsLoading(false);
 		return request;
@@ -25,8 +24,6 @@ export default function Card() {
 	}, [URL]);
 
 	const handleAnswerOptionClick = (isCorrect) => {
-	console.log(isCorrect);
-	console.log(isCorrect === questions[currentQuestion].correct_answer);
 	if (isCorrect === questions[currentQuestion].correct_answer) {
 		setScore(score + 1);
 	}
