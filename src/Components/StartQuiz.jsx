@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../index.css";
 import "./StartQuiz.css";
+import { ToggleButtonGroup } from "@mui/material";
+import { ToggleButton } from "@mui/material";
 
 function StartQuiz(props) {
   const [enteredNumber, setEnteredNumber] = useState("5");
@@ -33,20 +35,23 @@ function StartQuiz(props) {
 
   return (
     <form onSubmit={submitHandler}>
-	<p>Be smarter, quicker and brainier!<br/>Put your quiz skills to the test and broaden your knowledge.</p>
+      <p className="message">
+        Be smarter, quicker and brainier!
+        <br />
+        Put your quiz skills to the test and broaden your knowledge.
+      </p>
       <div>
         <div>
           <label>Number of Questions:</label>
-          <select
-            value={enteredNumber}
-            name="content"
-            id="content"
+          <ToggleButtonGroup
+            color="primary"
+            exclusive
             onChange={numberChangeHandler}
           >
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-          </select>
+            <ToggleButton value="5">5</ToggleButton>
+            <ToggleButton value="10">10</ToggleButton>
+            <ToggleButton value="15">15</ToggleButton>
+          </ToggleButtonGroup>
         </div>
         <div>
           <label>Subject Area</label>
@@ -80,7 +85,6 @@ function StartQuiz(props) {
       </div>
     </form>
   );
-
 }
 
 export default StartQuiz;
