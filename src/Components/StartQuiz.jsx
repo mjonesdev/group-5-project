@@ -33,6 +33,7 @@ function StartQuiz(props) {
 
   return (
     <form onSubmit={submitHandler}>
+	<p>Be smarter, quicker and brainier!<br/>Put your quiz skills to the test and broaden your knowledge.</p>
       <div>
         <div>
           <label>Number of Questions:</label>
@@ -75,7 +76,7 @@ function StartQuiz(props) {
         </div>
       </div>
       <div>
-        <button type="submit">Add Expense</button>
+        <button type="submit">Start Quiz</button>
       </div>
     </form>
   );
