@@ -7,7 +7,7 @@ import { ToggleButton } from "@mui/material";
 function StartQuiz(props) {
   const [enteredNumber, setEnteredNumber] = useState("5");
   const [enteredContent, setEnteredContent] = useState("linux");
-  const [enteredDifficulty, setEnteredDifficulty] = useState("easy");
+  const [enteredDifficulty, setEnteredDifficulty] = useState("Easy");
 
   const numberChangeHandler = (event) => {
     setEnteredNumber(event.target.value);
