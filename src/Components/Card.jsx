@@ -71,6 +71,14 @@ export default function Card(props) {
 		) : (
 		<div>{questionContent}</div>
 		)}
+
+<button type="button" onClick={ props.restartFunction("start") }>
+    <span>Restart</span>
+  </button>
+
+
+
+
 	</div>
 	);
 }

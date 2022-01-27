@@ -20,6 +20,12 @@ export default function App() {
 		})
 	}
 
+	const saveGameStateRestart = (receivedData) => {
+		setGameState({
+			...enteredOptions
+		})
+	}
+
 	return (
 
 		<div className="App">
