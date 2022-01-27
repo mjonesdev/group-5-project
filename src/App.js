@@ -21,9 +21,7 @@ export default function App() {
 	}
 
 	const saveGameStateRestart = (receivedData) => {
-		setGameState({
-			...enteredOptions
-		})
+		setGameState(receivedData)
 	}
 
 	return (
@@ -32,7 +30,7 @@ export default function App() {
 		<h1>Quiz App</h1>
         <QuizContext.Provider value={{ gameState, setGameState }}>
         {quizOptions.gameState === "start" && <StartQuiz onSaveQuizOptions={saveOptionsDataHandler}/>}
-		{quizOptions.gameState === "card" && <Card quizOptions={quizOptions}/>}
+		{quizOptions.gameState === "card" && <Card quizOptions={quizOptions} restartFunction={saveGameStateRestart}/>}
         </QuizContext.Provider>
 		<div className="slider-thumb"></div>
 		<div className="slider-thumb1"></div>
