@@ -1,4 +1,4 @@
-const API_KEY = "52a2lkXFMRcav9fXCCAZe63CMAnvZ8ilUJCi7XXp"
+const API_KEY = process.env.REACT_APP_API_KEY
 
 const baseURL = `https://quizapi.io/api/v1/questions?apiKey=${API_KEY}`
 
