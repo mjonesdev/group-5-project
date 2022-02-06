@@ -29,7 +29,6 @@ function StartQuiz(props) {
       difficulty: enteredDifficulty,
       gameState: "card",
     };
-
     props.onSaveQuizOptions(quizData);
   };
 

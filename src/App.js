@@ -1,12 +1,9 @@
-// Using a react hook 'useContext'
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import Card from "./Components/Card";
 import StartQuiz from "./Components/StartQuiz";
 import "./index.css";
-import { QuizContext } from "./Helpers/Contexts";
 
 export default function App() {
-  const [gameState, setGameState] = useState("start");
   const [quizOptions, setQuizOptions] = useState({
     gameState: "start",
     difficulty: "easy",
@@ -20,24 +17,23 @@ export default function App() {
     });
   };
 
-//   const saveGameStateRestart = (receivedData) => {
-//     setGameState({receivedData});
-// 	console.log(gameState)
-//   };
+  const saveGameStateRestart = (receivedData) => {
+    setQuizOptions({
+      ...receivedData,
+    });
+  };
 
   return (
     <div className="App">
       <h1>Quiz App</h1>
-      <QuizContext.Provider value={{ gameState, setGameState }}>
-        {quizOptions.gameState === "start" && (
-          <StartQuiz onSaveQuizOptions={saveOptionsDataHandler} />
-        )}
-        {quizOptions.gameState === "card" && (
-          <Card
-            quizOptions={quizOptions}
-          />
-        )}
-      </QuizContext.Provider>
+      {quizOptions.gameState === "start" ? (
+        <StartQuiz onSaveQuizOptions={saveOptionsDataHandler} />
+      ) : (
+        <Card
+          quizOptions={quizOptions}
+          restartFunction={saveGameStateRestart}
+        />
+      )}
       <div className="slider-thumb"></div>
       <div className="slider-thumb1"></div>
       <div className="slider-thumb2"></div>

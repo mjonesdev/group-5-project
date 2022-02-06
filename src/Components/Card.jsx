@@ -13,9 +13,7 @@ export default function Card(props) {
   let URL = `${baseURL}&category=${props.quizOptions.content}&difficulty=${props.quizOptions.difficulty}&limit=${props.quizOptions.number}`;
   useEffect(() => {
     async function fetchData() {
-      console.log(props);
       const request = await axios.get(`${URL}`);
-      console.log(URL);
       setQuestions(request.data);
       setIsLoading(false);
       return request;
@@ -36,10 +34,16 @@ export default function Card(props) {
     }
   };
 
-//   const resetHandler = (event) => {
-//     event.preventDefault();
-//     props.restartFunction(event);
-//   };
+  const resetHandler = (event) => {
+    event.preventDefault();
+    const quizData = {
+      number: 5,
+      content: "linux",
+      difficulty: "Easy",
+      gameState: "start",
+    };
+    props.restartFunction(quizData);
+  };
 
   const questionContent = isLoading ? (
     <div>...Loading</div>
@@ -67,6 +71,19 @@ export default function Card(props) {
     </>
   );
 
+  const restartBtn = (
+    <div className="btnDiv">
+      <button
+        className="btn"
+        type="button"
+        value={"start"}
+        onClick={resetHandler}
+      >
+        Restart
+      </button>
+    </div>
+  );
+
   return (
     <div>
       <div className="app">
@@ -78,16 +95,7 @@ export default function Card(props) {
           <div>{questionContent}</div>
         )}
       </div>
-      {/* <div className="btnDiv">
-        <button
-          className="btn"
-          type="button"
-		  value={"start"}
-          onClick={resetHandler}
-        >
-          Restart
-        </button>
-      </div> */}
+      {showScore ? restartBtn : <div></div>}
     </div>
   );
 }
